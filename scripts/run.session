@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. ./service.conf
+
+../session/script/session daemon -l "http://*:$SERVICE_SESSION_PORT"

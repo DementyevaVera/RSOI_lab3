@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. ./service.conf
+
+../backend_companies/script/backend_companies daemon -l "http://*:$SERVICE_COMPANIES_PORT"

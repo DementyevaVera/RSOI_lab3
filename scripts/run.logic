@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. ./service.conf
+
+../main_logic/script/main_logic daemon -l "http://*:$SERVICE_LOGIC_PORT"

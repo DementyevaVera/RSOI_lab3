@@ -1,0 +1,14 @@
+% layout 'default';
+% title 'Companies';
+
+%# prev, next, list_ref
+
+% for my $company (@{$list_ref}) {
+	id: <%= $company->{id} %> <br/>
+	name: <%= $company->{name} %> <br/>
+	<a href="/companies?button=Select&company_id=<%= $company->{id} %>"> detail </a><br/>
+	------------------------------ <br/>
+%}
+
+<a href="/companies?button=Select&page=<%= $prev %>"> prev </a>
+<a href="/companies?button=Select&page=<%= $next %>"> next </a>

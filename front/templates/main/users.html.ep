@@ -1,0 +1,27 @@
+% layout 'default';
+% title 'User registration';
+<form action="/users" method="POST" >
+  % if (param 'login') {
+    <b>Wrong arguments, please try again.</b><br>
+  % }
+
+  Login:<br>
+  %= text_field 'login'
+  <br>
+
+  Password:<br>
+  %= password_field 'pass'
+  <br>
+
+  Role:<br>
+  % my $role = param 'role';
+  %= text_field 'role' => ($role || q{})
+  <br>
+
+  Company:<br>
+  % my $company_id = param 'company_id';
+  %= text_field 'company_id' => ($company_id || q{})
+  <br>
+
+  <input type="submit" value="Apply">
+</form>

@@ -1,0 +1,25 @@
+% layout 'default';
+% title 'Job';
+%# id, company_id, name, salary, requirements, create
+<form action="/jobs" method="POST" >
+  id:<br>
+  %= text_field 'id', value => $id
+
+  <br>company_id:<br>
+  %= text_field 'company_id', value => $company_id
+
+  <br>name:<br>
+  %= text_field 'name', value => $name
+  <br>salary:<br>
+  %= text_field 'salary', value => $salary
+  <br>requirements:<br>
+  %= text_field 'requirements', value => $requirements
+
+  <br>
+  % if (param 'create') {
+	<input type="submit" name="button" value="Register">
+  % } else {
+	<input type="submit" name="button" value="Update">
+	<input type="submit" name="button" value="Delete">
+  % }
+</form>

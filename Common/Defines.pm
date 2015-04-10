@@ -1,0 +1,53 @@
+package Common::Defines;
+
+use strict;
+use warnings;
+
+use base qw(Exporter);
+our @EXPORT_OK = qw(
+	ROLE_ID_CUSTOMER
+	ROLE_ID_MANAGER
+	ROLE_ID_DIRECTOR
+
+	ROLES_ARRAY
+
+	SCOPE_JOB_READ
+	SCOPE_JOB_WRITE
+
+	SCOPE_COMPANY_READ
+	SCOPE_COMPANY_WRITE
+
+	SCOPE_PERSONAL_READ
+	SCOPE_PERSONAL_WRITE
+
+	%ROLES
+);
+
+our %EXPORT_TAGS = (
+	all => [@EXPORT_OK],
+);
+
+sub ROLE_ID_CUSTOMER()	{ 1 }
+sub ROLE_ID_MANAGER()	{ 2 }
+sub ROLE_ID_DIRECTOR()	{ 3 }
+
+sub ROLES_ARRAY() {
+	(
+		ROLE_ID_CUSTOMER(),
+		ROLE_ID_MANAGER(),
+		ROLE_ID_DIRECTOR(),
+	)
+}
+
+our %ROLES = (
+	customer	=> ROLE_ID_CUSTOMER(),
+	director	=> ROLE_ID_DIRECTOR(),
+	manager		=> ROLE_ID_MANAGER(),
+);
+
+sub SCOPE_JOB_READ()		{ 0x1 }
+sub SCOPE_JOB_WRITE()		{ 0x2 }
+sub SCOPE_COMPANY_READ()	{ 0x10 }
+sub SCOPE_COMPANY_WRITE()	{ 0x20 }
+sub SCOPE_PERSONAL_READ()	{ 0x100 }
+sub SCOPE_PERSONAL_WRITE()	{ 0x200 }

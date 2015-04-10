@@ -1,0 +1,21 @@
+% layout 'default';
+% title 'Company registration';
+<form action="/companies" method="POST" >
+  Name:<br>
+  %= text_field 'name'
+  <br>
+
+  Description:<br>
+  %= text_field 'description'
+  <br>
+
+  Login:<br>
+  %= text_field 'login'
+  <br>
+
+  Password:<br>
+  %= password_field 'pass'
+  <br>
+
+  <input type="submit" name="button" value="Register">
+</form>

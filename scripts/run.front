@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. ./service.conf
+
+../front/script/front daemon -l "http://*:$SERVICE_FRONT_PORT"

@@ -1,0 +1,14 @@
+% layout 'default';
+% title 'Main page';
+
+<a href='/login'>Login</a><br>
+<a href='/logout'>Logout</a><br><br>
+
+<a href='/me'>Who am I</a><br><br>
+
+<a href='/users'>Add user</a><br>
+<a href='/companies_form'>Add company</a><br><br>
+
+<a href='/companies?button=Select'>Select companies</a><br>
+<a href='/jobs?button=Select'>Select jobs (all)</a><br>
+%<a href='/jobs?button=Select&writable=1'>Select jobs (writable)</a><br>

@@ -1,0 +1,28 @@
+% layout 'default';
+% title 'Jobs';
+
+%# prev, next, list_ref
+
+% if (ref $list_ref ne 'ARRAY') {
+%	$list_ref = $list_ref->{jobs};
+%}
+
+% for my $job (@{$list_ref}) {
+	% if (not $writable) {
+		id: <%= $job->{id} %> <br/>
+		name: <%= $job->{name} %> <br/>
+		salary: <%= $job->{salary} %> <br/>
+		company_name: <%= $job->{company_info}{name} %> <br/>
+		company_descr: <%= $job->{company_info}{description} %> <br/>
+		<a href="/jobs?button=Select&job_id=<%= $job->{id} %>"> detail </a><br/>
+		------------------------------ <br/>
+	% } else {
+		<a href="/jobs?button=Select&job_id=<%= $job %>"> job
+			<%= $job %> </a><br/>
+	% }
+%}
+
+% if (not $writable) {
+	<a href="/jobs?button=Select&page=<%= $prev %>"> prev </a>
+	<a href="/jobs?button=Select&page=<%= $next %>"> next </a>
+%}

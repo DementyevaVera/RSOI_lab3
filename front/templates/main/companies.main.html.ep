@@ -1,0 +1,25 @@
+% layout 'default';
+% title 'Company';
+<form action="/companies" method="POST" >
+  id:<br>
+  %= text_field 'id', value => $id
+
+  <br>name:<br>
+  %= text_field 'name', value => $name
+
+  <br>description:<br>
+  %= text_field 'description', value => $description
+
+  <br>Jobs:
+% for my $job (@{$jobs}) {
+    <a href="/jobs?button=Select&job_id=<%= $job %>"> <%= $job %> </a>
+% }
+  <br>
+
+  <a href="/jobs?button=Select&create=1&company_id=<%= $id %>"> New job </a>
+  <a href="/users?role=2&company_id=<%= $id %>"> New manager </a>
+
+  <br>
+  <input type="submit" name="button" value="Update">
+  <input type="submit" name="button" value="Delete">
+</form>
